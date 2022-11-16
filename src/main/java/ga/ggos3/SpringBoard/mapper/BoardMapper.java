@@ -9,6 +9,6 @@ import java.util.List;
 public interface BoardMapper {
 
     int boardCount();
-
+    Board getBoard(Long boardId);
     List<Board> getList();
 }

@@ -27,4 +27,17 @@ public class BoardController {
 
         return "board/hello";
     }
+    @GetMapping("/main")
+    public String main(Model model){
+        model.addAttribute("list", service.boardList());
+
+        return "board/main";
+    }
+
+    @GetMapping("/view")
+    public String viewBoard(Model model, Long boardId){
+        model.addAttribute("halo", service.getBoard(boardId));
+
+        return "board/view";
+    }
 }
